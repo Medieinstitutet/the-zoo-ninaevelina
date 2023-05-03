@@ -43,12 +43,8 @@ export const Animals = () => {
     console.log("test");
    }, [animals]);*/
 
-
-    return (
-        <>
-        <Navbar></Navbar>
-        <h1>The Zoo</h1>
-        <div>
+   /*
+     <div>
             {animals.map((animal) => {
                 return <div key={animal.id} className="animal-card">
                     <h2>{animal.name}</h2>
@@ -58,7 +54,23 @@ export const Animals = () => {
             })}
          
         </div>
-        
+   */
+
+
+    return (
+        <>
+        <Navbar></Navbar>
+        <h1>The Zoo</h1>
+        {animals.map((animal) => {
+            return (
+                <Link to={"/animal/" + animal.id} key={animal.id}>
+                    <h2>{animal.name}</h2>
+                    <img src={animal.imageUrl}/>
+                    <p>{animal.shortDescription}</p>
+                </Link>
+            );
+        })}
+ 
         
         </>
     );

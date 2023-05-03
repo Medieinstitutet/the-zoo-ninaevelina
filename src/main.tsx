@@ -8,6 +8,7 @@ import {
 import './index.scss'
 import { Main } from './components/pages/Main';
 import { Animals } from './components/pages/Animals';
+import { Animal } from './components/pages/Animal';
 
 /*
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
@@ -43,8 +44,8 @@ const router = createBrowserRouter([
     element: <Animals></Animals>,//animalcomponent 
   },
   {
-    path: "/animals/:id",
-    element: "", //single animal
+    path: "/animal/:id",
+    element: <Animal></Animal>, //single animal
   },
 ]);
 
