@@ -1,10 +1,10 @@
 import { Navbar } from "../Navbar";
 
 export const Main = () => {
-    return (
-        <>
-        <Navbar></Navbar>
-        <h1>The Zoo</h1>
-        </>
-    );
+  return (
+    <>
+      <Navbar></Navbar>
+      <h1>The Zoo</h1>
+    </>
+  );
 };
