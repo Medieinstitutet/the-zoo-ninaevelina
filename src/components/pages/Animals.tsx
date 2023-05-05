@@ -7,71 +7,42 @@ import { IAnimal } from "../../models/IAnimal";
 import { getLSData } from "../../services/getLSData";
 import axios from "axios";
 import "../../styles/Animals.scss";
-
+import { useParams } from "react-router-dom";
 
 export const Animals = () => {
-   const [animals, setAnimals] = useState<IAnimal[]>([]);
+  const [animals, setAnimals] = useState<IAnimal[]>([]);
 
-   useEffect(() => {
+  useEffect(() => {
     let animalsLS = getLSData();
 
     if (animalsLS.length !== 0) {
-        setAnimals(animalsLS);
+      setAnimals(animalsLS);
     } else {
-        getAnimalData().then((animals) => {
-            setToLS(animals);
-            setAnimals(animals);
-        });
-        //setToLS(animals);
+      getAnimalData().then((animals) => {
+        setToLS(animals);
+        setAnimals(animals);
+      });
+      //setToLS(animals);
     }
-   }, []);
+  }, []);
 
-
-
-/*
-   useEffect(() => {
-    axios.get<IAnimal[]>("https://animals.azurewebsites.net/api/animals").then((response) => {
-        setAnimals(response.data);
-        let storedAnimals = setToLS();
-        console.log(storedAnimals);
-        console.log("ls", storedAnimals);
-
-    });
-   }, []);*/
-/*
-   useEffect(() => {
-    console.log("test");
-   }, [animals]);*/
-
-   /*
-     <div>
-            {animals.map((animal) => {
-                return <div key={animal.id} className="animal-card">
-                    <h2>{animal.name}</h2>
-                    <img src={animal.imageUrl}/>
-                    <p>{animal.shortDescription}</p>
-                    </div>;
-            })}
-         
-        </div>
-   */
-
-
-    return (
-        <>
-        <Navbar></Navbar>
-        <h1>The Zoo</h1>
-        {animals.map((animal) => {
-            return (
-                <Link to={"/animal/" + animal.id} key={animal.id}>
-                    <h2>{animal.name}</h2>
-                    <img src={animal.imageUrl}/>
-                    <p>{animal.shortDescription}</p>
-                </Link>
-            );
+  return (
+    <>
+      <Navbar></Navbar>
+      <h1>The Zoo</h1>
+      <div className="animals">
+        {animals.map((animal, index) => {
+          return (
+            <Link to={animal.id.toString()} key={index.toString()}>
+              <div className="animals__animal-card">
+                <h2>{animal.name}</h2>
+                <img src={animal.imageUrl} />
+                <p>{animal.shortDescription}</p>
+              </div>
+            </Link>
+          );
         })}
- 
-        
-        </>
-    );
+      </div>
+    </>
+  );
 };
