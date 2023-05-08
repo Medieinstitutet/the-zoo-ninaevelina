@@ -21,7 +21,7 @@ export const AnimalView = () => {
   const updateTime = () => {
     
   }*/
-
+  /*
   const updateHungerStatus = () => {
     animals.map((animal) => {
       if (animal.id.toString() === params.id) {
@@ -44,12 +44,13 @@ export const AnimalView = () => {
 
     setAnimals([...animals]);
     setToLS([...animals]);
-  };
+  };*/
 
   const setAnimal = () => {
     animals.map((animal) => {
       if (animal.id.toString() === params.id) {
         animal.isFed = true;
+        animal.lastFed = new Date().toLocaleString();
       } else {
         return;
       }
@@ -58,17 +59,22 @@ export const AnimalView = () => {
     setToLS([...animals]);
   };
 
+  //<button onClick={updateHungerStatus}>Test</button>
+
   //let time = Date.now() - new Date(clickedAnimal.lastFed).getTime();
 
   if (clickedAnimal === undefined) {
-    return <p>test</p>;
+    return <p className="error">Woops, something went wrong!</p>;
   } else {
     return (
       <>
         <Navbar></Navbar>
+        <div className="btn-container">
+          <button onClick={setAnimal} disabled={clickedAnimal.isFed === true}>
+            Feed
+          </button>
+        </div>
         <Animal {...clickedAnimal}></Animal>
-        <button onClick={setAnimal}>Feed</button>
-        <button onClick={updateHungerStatus}>Test</button>
       </>
     );
   }
