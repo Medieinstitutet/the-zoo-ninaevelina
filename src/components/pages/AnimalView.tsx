@@ -32,7 +32,12 @@ export const AnimalView = () => {
   };
 
   if (clickedAnimal === undefined) {
-    return <p className="error">Woops, something went wrong!</p>;
+    return (
+      <p className="error">
+        Woops, something went wrong!<br></br>{" "}
+        <Link to="/animals">BACK TO THE ZOO</Link>
+      </p>
+    );
   } else {
     return (
       <>
