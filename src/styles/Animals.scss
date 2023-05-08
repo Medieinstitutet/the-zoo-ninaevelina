@@ -1,22 +1,16 @@
 h1 {
     text-align: center;
-
 }
 .animals {
     justify-content: center;
-    //text-align: center;
     display: grid;
     grid-template-columns: 1fr;
-   // width: 60%;
-   // margin-left: 20%;
 
     &__animal-card {
            margin-bottom: 3rem;
            margin-left: 20px;
            margin-right: 20px;
            border: 3px solid black;
-           //text-align: center;
-           //justify-content: center;
            font-weight: 600;
            color: black;
            background-color: white;
@@ -50,20 +44,16 @@ a:hover {
     .animals {
         display: grid;
         grid-template-columns: 1fr 1fr;
-       // width: 80%;
 
         &__animal-card {
             display: flex;
             flex-direction: row;
             margin-bottom: 1rem;
-            //width: 300px;
-            //width: 50%;
         }
         &__animal-content {
             display: inline-flex;
             margin-left: 1rem;
             flex-direction: column;
-            
         }
     }
 
