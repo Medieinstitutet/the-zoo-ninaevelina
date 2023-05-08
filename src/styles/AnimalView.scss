@@ -1,0 +1,43 @@
+#root {
+    text-align: center;
+}
+.hungry {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+}
+.fed {
+   background-color: #efff70;
+   text-align: center;
+   border: 3px solid black;
+}
+
+img {
+    place-self: center;
+}
+button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: black;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    color: white;
+    margin-bottom: 20px;
+  }
+  button:hover {
+    border-color: white;
+  }
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+.error {
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+}

@@ -1,0 +1,60 @@
+h1 {
+    text-align: center;
+}
+.animals {
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    &__animal-card {
+           margin-bottom: 3rem;
+           margin-left: 20px;
+           margin-right: 20px;
+           border: 3px solid black;
+           font-weight: 600;
+           color: black;
+           background-color: white;
+    }
+}
+
+
+img {
+    width: 220px;
+    height: 200px;
+    justify-content: center;
+    
+}
+
+a:hover {
+    text-decoration: none;
+    cursor: grab;
+}
+
+.hungry {
+    background-color: rgb(173, 75, 75);
+    text-align: center;
+    border: 3px solid black;
+}
+.fed {
+    background-color: rgb(107, 190, 107);
+    text-align: center;
+}
+
+@media screen and (min-width:900px) {
+    .animals {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        &__animal-card {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 1rem;
+        }
+        &__animal-content {
+            display: inline-flex;
+            margin-left: 1rem;
+            flex-direction: column;
+        }
+    }
+
+}
