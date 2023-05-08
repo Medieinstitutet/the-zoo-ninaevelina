@@ -1,9 +1,4 @@
-import { Navbar } from "../Navbar";
-import { useEffect } from "react";
-import { useState } from "react";
 import { IAnimal } from "../../models/IAnimal";
-import { useParams } from "react-router-dom";
-import { getLSData } from "../../services/getLSData";
 
 export const Animal = (animal: IAnimal) => {
   return (
