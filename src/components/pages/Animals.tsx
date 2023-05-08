@@ -8,6 +8,7 @@ import { getLSData } from "../../services/getLSData";
 import axios from "axios";
 import "../../styles/Animals.scss";
 import { useParams } from "react-router-dom";
+import "../../styles/AnimalView.scss";
 
 export const Animals = () => {
   const [animals, setAnimals] = useState<IAnimal[]>([]);
@@ -22,7 +23,6 @@ export const Animals = () => {
         setToLS(animals);
         setAnimals(animals);
       });
-      //setToLS(animals);
     }
   }, []);
 
@@ -33,8 +33,12 @@ export const Animals = () => {
       <div className="animals">
         {animals.map((animal, index) => {
           return (
-            <Link to={animal.id.toString()} key={index.toString()}>
-              <div className="animals__animal-card">
+            <Link
+              to={animal.id.toString()}
+              key={index.toString()}
+              className="animals__animal-card"
+            >
+              <div className="animals__animal-content">
                 <h2>{animal.name}</h2>
                 <img src={animal.imageUrl} />
                 <p>{animal.shortDescription}</p>
