@@ -5,9 +5,7 @@ import { setToLS } from "../../services/DataToLS";
 import { useEffect, useState } from "react";
 import { IAnimal } from "../../models/IAnimal";
 import { getLSData } from "../../services/getLSData";
-import axios from "axios";
 import "../../styles/Animals.scss";
-import { useParams } from "react-router-dom";
 import "../../styles/AnimalView.scss";
 
 export const Animals = () => {
